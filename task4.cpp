@@ -1,21 +1,30 @@
 #include<iostream>
-#include<cmath>
 using namespace std;
+int hour(int hours,int days,int workers);
 main()
 {
-float num,result,result1,result2,result3,result4,result5;
-cout<<"Enter the number: ";
-cin>>num;
-result=cbrt(num);
-result1=ceil(num);
-result2=floor(num);
-result3=cos(num);
-result4=sin(num);
-result5=tan(num);
-cout<<"The result is:  "<<result<<endl;
-cout<<"The result1 is:  "<<result1<<endl;
-cout<<"The result2 is:  "<<result2<<endl;
-cout<<"The result3 is:  "<<result3<<endl;
-cout<<"The result4 is:  "<<result4<<endl;
-cout<<"The result5 is:  "<<result5<<endl;
+    int hours,days,workers,hours1;
+    cout<<"Enter the hours in range(0 to 200): ";
+    cin>>hours;
+    cout<<"Enter the days in range(0 to 20000): ";
+    cin>>days;
+    cout<<"Enter the workers in range(0 to 200): ";
+    cin>>workers;
+    hour(hours,days,workers); 
+}
+int hour(int hours,int days,int workers)
+{
+    float days1,days2,hours1,time;
+days1=(days/100)*10;
+days2=days-days1;
+hours1=10*days2*workers;
+time=hours1-hours;
+if(hours1>=hours)
+{
+    cout<<"Yes  "<<time<<" left";
+}
+if(hours1<hours)
+{
+    cout<<"Not enough time "<<-time<<" hours needed";
+}
 }
